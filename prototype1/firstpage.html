@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <style>
 .mainpage{
@@ -87,14 +88,21 @@ opacity:0.9;
         A travel seaching system product designed by enthusiastic MidWest folks, You Betcha!!!   
         <div class="title"><h1>Travel Master</h1></div>
         <div class="question"><h2>Please Input the city name you want to travel:</h2></div>
-        <input class="inputitem"></input>
-        <Button class="search"><i id=magnifying-glass></i></Button>
+        <input class="inputitem" placeholder="enter your city here" ></input>
+        <Button class="search" id="searching" ><i id=magnifying-glass></i></Button>
       
 
     </div>
     <script>
-    
-    
+       var city;
+        
+        $("#searching").on("click",function(){
+            city=$(".inputitem").val();
+             localStorage.chosencity=city;
+           location.href="secondpage.html";
+       
+        
+      })
     </script>
     
 </body>
