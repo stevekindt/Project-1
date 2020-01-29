@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.talk{color:green;}
+
+.infomationlog{background-color: green;
+height:100vh;
+width:100vw;
+position:relative;
+}
+#catalog{
+position:absolute;
+right:10%;
+top:0px;
+}
+.Generalinformation{
+height:80%;
+width:95vw;
+background-color: yellow;
+}
+#catalog{
+    color:yellow;
+    font-size:35px;
+}
+#cityname{
+    color:yellow;  
+}
+
+</style>
+<body>
+    <h1 class="talk">Hey, Hold my beer and watch this!!!! Ha, let me Tell ya about this city</h1>
+    <div class="infomationlog">
+    <h1 id="cityname"> </h1>
+    <nav id="catalog">
+        <a href="food.html">food</a> | <a href=culture.html>culture</a> | <a href=localevent.html>local Event</a> | <a href=hoteloption.html>hotels option</a>
+    </nav>
+    <div class="Generalinformation">
+
+    </div>
+    </div>
+</body>
+
+
+
+<script>
+var city;
+city=localStorage.getItem("chosencity")
+$("#cityname").text("general information of this city:  " +city)
+
+
+
+
+
+</script>
+</html>
