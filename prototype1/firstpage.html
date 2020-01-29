@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+.mainpage{
+height:100vh;
+width:100vw;
+position:absolute;
+color:yellow;
+font-size:30px;
+opacity:0.9;
+ }
+ #magnifying-glass{
+    font-size:5em;
+    display:inline-block;
+    position:relative;
+    width: 0.4em;
+    height:0.4em;
+    border:0.1em solid black;
+    border-radius:0.35em;
+        
+    }
+    #magnifying-glass::before {
+        content:"";
+        display:inline-block;
+        background:black;
+        width:0.3em;
+        height:0.08em;
+        border-width:0;
+        position:absolute;
+        right:-0.25em;
+        bottom:-0.1em;
+        transform:rotate(45deg)
+    }
+ .title{
+    background-color:green;
+          position:absolute;
+          font-size:30px;
+          top:30%;
+          left:20%;
+          right:20%;
+          color:yellow;
+          text-align: center;
+          opacity: 1;
+        }
+  .question{
+      position:absolute;
+      top:50%;
+      font-size:25px;
+      color:yellow;
+  }
+  .inputitem{
+      position:absolute;
+      top:60%;
+      left:20px;
+      right:20px;
+      height:15%;
+      width:80%;
+      font-size:50px;
+  }
+  
+  body{
+      background-image: url("images/Jesus.jpg"); 
+      background-size: 1600px 700px;
+    
+  }
+  .search{
+      background-color: yellow;
+      width:70px;
+      height:70px;
+      position:absolute;
+      top:60%;
+      right:14%;
+  }
+</style>
+
+
+
+<body>
+   
+    <div class="mainpage">
+        A travel seaching system product designed by enthusiastic MidWest folks, You Betcha!!!   
+        <div class="title"><h1>Travel Master</h1></div>
+        <div class="question"><h2>Please Input the city name you want to travel:</h2></div>
+        <input class="inputitem" placeholder="enter your city here" ></input>
+        <Button class="search" id="searching" ><i id=magnifying-glass></i></Button>
+      
+
+    </div>
+    <script>
+       var city;
+        
+        $("#searching").on("click",function(){
+            city=$(".inputitem").val();
+             localStorage.chosencity=city;
+           location.href="secondpage.html";
+       
+        
+      })
+    </script>
+    
+</body>
+</html>
