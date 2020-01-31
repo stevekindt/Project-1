@@ -23,3 +23,9 @@ footer {
   bottom: -0.1em;
   transform: rotate(45deg);
 }
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
