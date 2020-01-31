@@ -31,7 +31,16 @@
 
 
 //2. AMADEUS: POINTS OF INTEREST
+$(".activities").on("click", function(event){
+    event.preventDefault();
 
+    var queryURL = "https://test.api.amadeus.com/v1/reference-data/locations/pois/by-square" + APIKey +
+    var APIKey = "JHCHXz0rYyUFTsDABAI8p8yu190uGMre"
+    $.ajax({
+        url: queryURL
+        method: "GET",
+    })
+})
 
 
 
