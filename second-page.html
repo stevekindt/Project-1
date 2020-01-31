@@ -1,120 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+      integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+      crossorigin="anonymous"
+    />
+    <!-- foundation cdn to add icons-->
+    <link
+      rel="stylesheet"
+      href="foundation-icon-font-3/foundation-icons/foundation-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
-        integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
-        crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <title>Travel Master</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+  </head>
 
-<body>
-
-    <!-- Body container where search results will populate -->
-
-    <!-- Weather container -->
-    <ul class="accordion" data-responsive-accordion-tabs="accordion large-tabs">
-        <li class="accordion-item is-active" data-accordion-item>
-            <a href="#" class="accordion-title">Weather</a>
-            <div class="accordion-content" data-tab-content>
-                <p>Panel 1. Lorem ipsum dolor</p>
-                <a href="#">Nowhere to Go</a>
-            </div>
-        </li>
-
-    </ul>
-    <!-- Activities container -->
-    <ul class="accordion" data-responsive-accordion-tabs="accordion large-tabs">
-        <li class="accordion-item is-active" data-accordion-item>
-            <a href="#" class="accordion-title">Music</a>
-            <div class="accordion-content" data-tab-content>
-                <p>Panel 1. Lorem ipsum dolor</p>
-                <a href="#">Nowhere to Go</a>
-            </div>
-        </li>
-
-
-
-        <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title">Food</a>
-            <div class="accordion-content" data-tab-content>
-                <p>Panel 1. Lorem ipsum dolor</p>
-                <a href="#">Nowhere to Go</a>
-            </div>
-        </li>
-
-        <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title">Activities</a>
-            <div class="accordion-content" data-tab-content>
-                <p>Panel 1. Lorem ipsum dolor</p>
-                <a href="#">Nowhere to Go</a>
-            </div>
-        </li>
-
-    </ul>
-    <!-- Places to stay container -->
-    <ul class="accordion" data-responsive-accordion-tabs="accordion large-tabs">
-        <li class="accordion-item is-active" data-accordion-item>
-            <a href="#" class="accordion-title">Places to Stay</a>
-            <div class="accordion-content" data-tab-content>
-                <p>Panel 1. Lorem ipsum dolor</p>
-                <a href="#">Nowhere to Go</a>
-            </div>
-        </li>
-
-    </ul>
-
-
-    <!-- Body container where search results will populate  -->
-
-
-
-
-
-
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+      integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+      crossorigin="anonymous"
+    ></script>
 
     <!--Header portion of the page-->
     <div class="top-bar" id="header">
-        <div class="top-bar-left">
-            <a href=index.html>
-                <img src="worldimg.png" width=10%vw;>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input type="search" href="index.html" placeholder="Search"></li>
-                <li><button type="button secondary" class="button">Enter a City</button></li>
-            </ul>
-        </div>
+      <div class="top-bar-left">
+        <a href="index.html"> <img src="plane.png" width="10%vw;"/></a>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input id="searchArea" type="search" placeholder="Search" /></li>
+          <li>
+            <button id="enterCity" type="button secondary" class="button">
+              Enter a City
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!--New Nav Bar w/ Weather and Places to stay Buttons-->
 
     <div class="expanded button-group">
-        <button class="button">Weather</button>
-        <button class="button dropdown arrow-only" type="button" data-toggle="example-dropdown-1">Activities </button>
-        <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
-            Just some junk that needs to be said. Or not. Your choice.
-        </div>
-        <button class="button">Places to Stay</button>
+      <button id="Weather" type="button" class="button">Weather</button>
+      <button id="Activities" type="button" class="button">Activities</button>
+      <button id="Places" type="button" class="button">Places to Stay</button>
     </div>
 
+    <div class="container">
+      <div id="weather">
+        weather
+      </div>
+      <div id="activities" class="hide">
+        activities
+      </div>
+      <div id="places-to-stay" class="hide">
+        places to stay
+      </div>
+    </div>
+    <br />
 
-    <!-- Use Top Bar from Foundation CDN -->
+    <!-- footer -->
+    <footer>
+      <div class="top-bar" id="footer" style="background-color: #1779ba;">
+        <div class="top-bar-left" style="background-color: #1779ba;">
+          <a href="index.html"> <img src="plane.png" width="3%vw" /> </a>
+          <div class="text-container">
+            <div class="text-cont">
+              <p style="text-align: center;color: white;">
+                ©opyright 2020
+                <span class="icon-bar five-up">
+                  <a class="item" href="#">
+                    <i class="fi-social-twitter size-72"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-social-facebook"></i>
+                  </a>
+                  <a
+                    class="item"
+                    href="https://github.com/stevekindt/Project-1"
+                  >
+                    <i class="fi-social-github"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-mail"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-like"></i>
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    <!-- Footer -->
-
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
-        integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
-        crossorigin="anonymous"></script>
-    <script src="script.js">
-
-
-
-
-    </script>
-</body>
-
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+      integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

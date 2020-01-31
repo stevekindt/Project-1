@@ -7,6 +7,8 @@
       integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
       crossorigin="anonymous"
     />
+    <!-- foundation cdn to add icons-->
+
     <link
       rel="stylesheet"
       href="foundation-icon-font-3/foundation-icons/foundation-icons.css"
@@ -15,37 +17,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Travel Master</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
   </head>
-  <header></header>
 
   <body>
-    <!-- header section with logo -->
-    <div class="top-bar" id="header">
-      <div class="top-bar-left">
-        <a href="index.html"></a>
-        <img src="worldimg.png" width="10%vw" />
+    <header>
+      <!--Header portion of the page-->
+      <div class="top-bar" id="header">
+        <div class="top-bar-left">
+          <a href="index.html"> <img src="plane.png" width="10%vw;"/></a>
+        </div>
       </div>
-    </div>
-    <!-- main container with search bar -->
-    <div class="grid-container">
+    </header>
+    <br />
+
+    <div class="grid-container ">
       <input
+        id="searchArea"
         type="search"
         name="search"
-        placeholder="Search.."
+        placeholder="enter the city here"
         class="animated-search-form"
       />
+      <button
+        id="searchButton"
+        href="second-page.html"
+        style="display:inline"
+      ></button>
     </div>
+    <br />
 
     <!-- footer -->
     <footer>
-      <div class="top-bar" id="footer" style="background-color: #71aff5;">
-        <div class="top-bar-left" style="background-color: #71aff5;">
-          <a href="index.html"></a>
-          <img src="worldimg.png" width="5%vw" />
+      <div class="top-bar" id="footer" style="background-color: #1779ba;">
+        <div class="top-bar-left" style="background-color: #1779ba;">
+          <a href="index.html"> <img src="plane.png" width="3%vw" /> </a>
           <div class="text-container">
             <div class="text-cont">
-              <p style="text-align: center;">
+              <p style="text-align: center; color: white;">
                 ©opyright 2020
                 <span class="icon-bar five-up">
                   <a class="item" href="#">
