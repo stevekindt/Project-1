@@ -1,5 +1,40 @@
+#icon {
+  text-align: center;
+}
+
 footer {
-    background: #71AFF5;
-    padding: 20px;
-  }
-  
+  background: #71aff5;
+}
+
+i {
+  font-size: 35px;
+}
+
+.text-cont {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.five-up {
+  float: right;
+}
+
+.fi-social-facebook {
+  color: black;
+}
+
+.fi-mail {
+  color: black;
+}
+
+.fi-social-github {
+  color: black;
+}
+
+.fi-social-twitter {
+  color: black;
+}
+
+.fi-like {
+  color: black;
+}
