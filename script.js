@@ -1,29 +1,23 @@
 
 //LANDING PAGE
-//1. BUTTON WITH ONCLICK EVENT; TAKES USER TO SECOND PAGE; 
-
-
-
-
-
-
-
-
+//1. BUTTON WITH ONCLICK EVENT; TAKES USER TO SECOND PAGE;
+$("#searchButton").on("click", function() {
+  var city;
+  city = $("#searchArea").val();
+  localStorage.chosencity = city;
+  location.href = "second-page.html";
+});
 
 //2. SEARCH AREA; CAPTURE USER INPUT; ADD INPUT TO LOCAL STORAGE
-
-
-
-
-
-
-
-
 
 //OPERATIONAL PAGE
 //1. WEATHER API
 var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=49b107df79df951ca90870bc8b2042c1";
 var city = $("#searchArea").val();
+
+
+//2. AMADEUS: POINTS OF INTEREST
+
 
 $("#enterCity").on('click',function(event){
     event.preventDefault();
@@ -64,13 +58,5 @@ $(".activities").on("click", function(event){
 
 
 
+
 //3. AMADEUS: HOTELS
-
-
-
-
-
-
-
-
-
