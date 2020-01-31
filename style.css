@@ -1,5 +1,25 @@
 footer {
-    background: #71AFF5;
-    padding: 20px;
-  }
-  
+  background: #71aff5;
+  padding: 20px;
+}
+#searchButton {
+  font-size: 5em;
+  display: inline-block;
+  position: relative;
+  width: 0.4em;
+  height: 0.4em;
+  border: 0.1em solid black;
+  border-radius: 0.35em;
+}
+#searchButton::before {
+  content: "";
+  display: inline-block;
+  background: black;
+  width: 0.3em;
+  height: 0.08em;
+  border-width: 0;
+  position: absolute;
+  right: -0.25em;
+  bottom: -0.1em;
+  transform: rotate(45deg);
+}
