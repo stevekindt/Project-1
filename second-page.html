@@ -7,12 +7,14 @@
       integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
       crossorigin="anonymous"
     />
+
     <!-- foundation cdn to add icons-->
     <link
       rel="stylesheet"
       href="foundation-icon-font-3/foundation-icons/foundation-icons.css"
     />
     <link rel="stylesheet" href="style.css" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -22,10 +24,13 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
       rel="stylesheet"
     />
+
+
   </head>
 
   <body>
@@ -37,6 +42,12 @@
 
     <!--Header portion of the page-->
     <div class="top-bar" id="header">
+
+      <div class="top-bar-left">
+        <a href="index.html"> <img src="plane.png" width="10%vw;"/></a>
+      </div>
+      <div class="top-bar-right">
+
       <div class="top-bar">
         <div>
           <a href="index.html">
@@ -46,6 +57,7 @@
         <h1 id="site-name-2">TravelMaster</h1>
       </div>
 
+
       <ul class="menu">
         <li><input id="searchArea" type="search" placeholder="Search" /></li>
         <li>
@@ -54,6 +66,7 @@
           </button>
         </li>
       </ul>
+
     </div>
 
     <!--New Nav Bar w/ Weather and Places to stay Buttons-->
@@ -65,8 +78,11 @@
     </div>
 
     <div class="container">
+
       <div id="weather" class="show"></div>
+
     </div>
+
     <br />
 
     <!-- footer -->
@@ -111,5 +127,13 @@
       integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
       crossorigin="anonymous"
     ></script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChS377ioc4rERCH7UXk3AwP-PahaIe66o&callback=initMap"
+    ></script>
+
+
   </body>
 </html>
