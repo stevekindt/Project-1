@@ -17,6 +17,7 @@ $(document).ready(function() {
     event.preventDefault();
     var city = $("#searchArea").val();
     weatherFunction(city);
+    $("#searchArea").val("");
 
 });
 
