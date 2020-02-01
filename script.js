@@ -15,6 +15,12 @@ $(document).ready(function() {
 
   $("#enterCity").on("click", function(event) {
     event.preventDefault();
+    var city = $("#searchArea").val();
+    weatherFunction(city);
+
+});
+
+    function weatherFunction(city){
     var uvIndex = $("<p>").html("UV Index: ");
     var city = $("#searchArea").val();
     var weatherAPIKey = "&APPID=49b107df79df951ca90870bc8b2042c1";
@@ -156,6 +162,8 @@ $(document).ready(function() {
         });
       });
     });
+    }
+    
 
     //2. AMADEUS: POINTS OF INTEREST
 
@@ -174,5 +182,5 @@ $(document).ready(function() {
     });
 
     //3. AMADEUS: HOTELS
-  });
+  
 });
