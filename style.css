@@ -6,6 +6,7 @@ footer {
   background: #1779ba;
   position: fixed;
   width: 100%;
+  bottom: 0;
 }
 
 i {
@@ -77,4 +78,13 @@ i {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 5px;
+}
+.container{
+  text-align:center;
+  padding: 50px;
+  height: 800px;
+}
+.card-section{
+  width: 20%;
+  padding:20px;
 }
