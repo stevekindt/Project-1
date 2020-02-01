@@ -212,11 +212,7 @@ function initMap() {
 
     var city = $("#searchArea").val();
     weatherFunction(city);
-
-    $("#searchArea").val("");
-
     countryInfo(city);
-
 
 });
 
@@ -383,7 +379,7 @@ $.ajax({
 }).then(function(response){
     console.log(response);
 
-    var countryName = $("<h1>").text(response[0].name);
+    var countryName = $("<div>").text(response[0].name);
     console.log(response[0].name);
     
     $("#weather").append(countryName);
@@ -393,12 +389,10 @@ $.ajax({
 });
 }
 
-$("#Activities").on("click", function() {
+$("#funFacts").on("click", function() {
+    $("#weather").text("");
     var country = $("#searchArea").val();
-    $("#weather").html("");
     countryInfo(country);    
-    
-    
   });
 
 

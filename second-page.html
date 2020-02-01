@@ -25,9 +25,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
 
-    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
   </head>
 
@@ -47,22 +49,23 @@
       <div class="top-bar-right">
 
       <div class="top-bar">
-        <div><a href="index.html"> <img src="plane.png" height="20%" width= 20%/></a></div>
+        <div>
+          <a href="index.html">
+            <img src="plane.png" height="20%" width="20%"
+          /></a>
+        </div>
         <h1 id="site-name-2">TravelMaster</h1>
       </div>
 
 
-        <ul class="menu">
-          <li><input id="searchArea" type="search" placeholder="Search" /></li>
-          <li>
-            <button id="enterCity" type="button secondary" class="button">
-              Enter a City
-            </button>
-          </li>
-        </ul>
-
-      </div>
-
+      <ul class="menu">
+        <li><input id="searchArea" type="search" placeholder="Search" /></li>
+        <li>
+          <button id="enterCity" type="button secondary" class="button">
+            Enter a City
+          </button>
+        </li>
+      </ul>
 
     </div>
 
@@ -70,25 +73,14 @@
 
     <div class="expanded button-group">
       <button id="Weather" type="button" class="button">Weather</button>
-      <button id="Activities" type="button" class="button">Activities</button>
-      <button id="Places" type="button" class="button">Places to Stay</button>
+      <button id="funFacts" type="button" class="button">Fun Facts</button>
+      <button id="Places" type="button" class="button">Map</button>
     </div>
 
     <div class="container">
 
-      <div id="weather">
+      <div id="weather" class="show"></div>
 
-
-      <div id="weather" class="show">
-
-        weather
-      </div>
-      <div id="activities" class="hide">
-        activities
-      </div>
-      <div id="places-to-stay" class="hide">
-        places to stay
-      </div>
     </div>
 
     <br />
@@ -125,7 +117,6 @@
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </footer>
