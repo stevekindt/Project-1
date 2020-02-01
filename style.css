@@ -24,15 +24,11 @@ footer {
   bottom: -0.1em;
   transform: rotate(45deg);
 }
-=======
-    background: #71AFF5;
-    padding: 20px;
-  }
-  
-.hide{
-  display:none;
-}
-.show{
-  display:block;
-}
 
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+ 
