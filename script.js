@@ -6,6 +6,7 @@ $(document).ready(function() {
     city = $("#searchArea").val();
     localStorage.chosencity = city;
     location.href = "second-page.html";
+    
   });
 
   //2. SEARCH AREA; CAPTURE USER INPUT; ADD INPUT TO LOCAL STORAGE
@@ -17,6 +18,7 @@ $(document).ready(function() {
     event.preventDefault();
     var city = $("#searchArea").val();
     weatherFunction(city);
+    countryInfo(city);
 
 });
 
@@ -165,22 +167,28 @@ $(document).ready(function() {
     }
     
 
-    //2. AMADEUS: POINTS OF INTEREST
-
-    //2. AMADEUS: POINTS OF INTEREST
-    $(".activities").on("click", function(event) {
-      event.preventDefault();
-
-      var queryURL =
-        "https://test.api.amadeus.com/v1/reference-data/locations/pois/by-square" +
-        APIKey;
-      var APIKey = "JHCHXz0rYyUFTsDABAI8p8yu190uGMre";
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      });
-    });
-
-    //3. AMADEUS: HOTELS
+    //3. PLACES: INFO
   
 });
+
+function countryInfo(country){
+var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
+var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
+var country = $("#searchArea").val();
+$.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+        "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
+    }
+}).then(function(response){
+    console.log(response);
+});
+}
+
+$("#Activities").on("click", function() {
+    var country = $("#searchArea").val();
+    countryInfo(country);    
+  });
+
