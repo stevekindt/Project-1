@@ -42,13 +42,14 @@ $(document).ready(function() {
       // get and set the content
       var card = $("<div>").addClass("card");
       var cardBody = $("<div>").addClass("card-body");
-      var cityName = $("<h4>")
+      var cityName = $("<h1>")
         .addClass("card-title")
         .text(response.name);
+        console.log(response.name)
       // var cityDate = $("<h4>").addClass("card-title").text(response.date_iso.toString('en-US'));
-      var temperature = $("<p>")
+      var temperature = $("<h3>")
         .addClass("card-text current-temp")
-        .text("Temperature: " + tempF + " °F");
+        .text( + tempF + " °F");
       var tempFeel = $("<p>")
         .addClass("card-text")
         .text("Feels Like: " + feelsLike + " °F");
@@ -65,7 +66,7 @@ $(document).ready(function() {
 
       // // add to page
       cityName.append(image);
-      cardBody.append(city, temperature, tempFeel, humidity, wind, uvIndex);
+      cardBody.append(cityName, temperature,tempFeel, humidity, wind, uvIndex);
       card.append(cardBody);
       $("#weather").append(card);
 
@@ -125,9 +126,10 @@ $(document).ready(function() {
               var tempF = Math.round(temp);
 
               var card = $("<div>").addClass(
-                "card col-md-2 ml-4 secondary text-white"
+                "card-section float-left"
               );
               var cardBody = $("<div>").addClass("card-body p-3 forecastBody");
+            //   $(cardBody).css("width: 50px")
               var cityDate = $("<h4>")
                 .addClass("card-title")
                 .text(tomorrow.toLocaleDateString("en-US"));
