@@ -7,6 +7,13 @@
       integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
       crossorigin="anonymous"
     />
+    <!-- foundation cdn to add icons-->
+
+    <link
+      rel="stylesheet"
+      href="foundation-icon-font-3/foundation-icons/foundation-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -15,16 +22,18 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
-    <link href="style.css" , rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
       <!--Header portion of the page-->
       <div class="top-bar" id="header">
-        <div class="top-bar-left">
-          <a href="index.html"> <img src="plane.png" width="10%vw;"/></a>
-        </div>
+    
+        <div><a href="index.html"> <img src="plane.png" height="20%" width= 20%/></a></div>
+        
+        <h1 id="site-name">TravelMaster</h1>
+       
       </div>
     </header>
     <br />
@@ -46,12 +55,45 @@
       ></button>
     </div>
     <br />
-    <br />
-    <footer style="text-align: center;">
-      ©opyright 2020.
+
+    <!-- footer -->
+    <footer>
+      <div class="top-bar" id="footer" style="background-color: #1779ba;">
+        <div class="top-bar-left" style="background-color: #1779ba;">
+          <a href="index.html"> <img src="plane.png" width="3%vw" /> </a>
+          <div class="text-container">
+            <div class="text-cont">
+              <p style="text-align: center; color: white;">
+                ©opyright 2020
+                <span class="icon-bar five-up">
+                  <a class="item" href="#">
+                    <i class="fi-social-twitter size-72"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-social-facebook"></i>
+                  </a>
+                  <a
+                    class="item"
+                    href="https://github.com/stevekindt/Project-1"
+                  >
+                    <i class="fi-social-github"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-mail"></i>
+                  </a>
+                  <a class="item" href="#">
+                    <i class="fi-like"></i>
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
       integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="

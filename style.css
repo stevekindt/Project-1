@@ -1,7 +1,47 @@
-footer {
-  background: #71aff5;
-  padding: 20px;
+#icon {
+  text-align: center;
 }
+
+footer {
+  background: #1779ba;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+i {
+  font-size: 35px;
+}
+
+.text-cont {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.five-up {
+  float: right;
+}
+
+.fi-social-facebook {
+  color: white;
+}
+
+.fi-mail {
+  color: white;
+}
+
+.fi-social-github {
+  color: white;
+}
+
+.fi-social-twitter {
+  color: white;
+}
+
+.fi-like {
+  color: white;
+}
+
 #searchButton {
   font-size: 5em;
   display: inline-block;
@@ -30,7 +70,40 @@ footer {
 .show {
   display: block;
 }
+
 #places-to-stay {
   height: 300px;
   width: 30%;
 }
+
+
+.uv-span{
+  color: #fff;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+.container{
+  text-align:center;
+  padding: 50px;
+  height: 800px;
+}
+.card-section{
+  width: 20%;
+  padding:20px;
+}
+#site-name{
+  font-family: 'Quicksand', sans-serif;
+  text-align:center;
+  margin-right:40%;
+  
+}
+#site-name-2{
+  font-family: 'Quicksand', sans-serif;
+  text-align:center;
+  margin-right:30%;
+}
+
+
