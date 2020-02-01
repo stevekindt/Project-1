@@ -30,3 +30,7 @@ footer {
 .show {
   display: block;
 }
+#places-to-stay {
+  height: 300px;
+  width: 30%;
+}

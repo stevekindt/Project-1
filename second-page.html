@@ -1,95 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
-        integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
-        crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+      integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Travel Master</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
-        integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
-        crossorigin="anonymous"></script>
-
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+      integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+      crossorigin="anonymous"
+    ></script>
 
     <!--Header portion of the page-->
     <div class="top-bar" id="header">
-        <div class="top-bar-left">
-            <a href=index.html>
-                <img src="plane.png" width=10%vw;></a>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input id="searchArea" type="search" placeholder="Search"></li>
-                <li><button id ="enterCity" type="button secondary" class="button">Enter a City</button></li>
-            </ul>
-        </div>
+      <div class="top-bar-left">
+        <a href="index.html"> <img src="plane.png" width="10%vw;"/></a>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input id="searchArea" type="search" placeholder="Search" /></li>
+          <li>
+            <button id="enterCity" type="button secondary" class="button">
+              Enter a City
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!--New Nav Bar w/ Weather and Places to stay Buttons-->
 
     <div class="expanded button-group">
-        <button id="Weather" type="button" class="button">Weather</button>
-        <button id="Activities" type="button" class="button">Activities</button>
-        <button id="Places" type="button" class="button">Places to Stay</button>
+      <button id="Weather" type="button" class="button">Weather</button>
+      <button id="Activities" type="button" class="button">Activities</button>
+      <button id="Places" type="button" class="button">Places to Stay</button>
     </div>
 
     <div class="container">
-        <div id=weather>
-            weather
-        </div>
-        <div id=activities class=hide>
-            activities
-        </div>
-        <div id=places-to-stay class=hide>
-            places to stay
-        </div>
-        
-        
-        
-        </div>
+      <div id="weather">
+        weather
+      </div>
+      <div id="activities" class="hide">
+        activities
+      </div>
+      <div id="places-to-stay" class="hide">
+        places to stay
+      </div>
+    </div>
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
-integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
-crossorigin="anonymous"></script>  
-
-</body>
-
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+      integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChS377ioc4rERCH7UXk3AwP-PahaIe66o&callback=initMap"
+    ></script>
+  </body>
 </html>
