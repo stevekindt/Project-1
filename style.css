@@ -88,3 +88,15 @@ i {
   width: 20%;
   padding:20px;
 }
+#site-name{
+  font-family: 'Quicksand', sans-serif;
+  text-align:center;
+  margin-right:40%;
+  
+}
+#site-name-2{
+  font-family: 'Quicksand', sans-serif;
+  text-align:center;
+  margin-right:30%;
+}
+
