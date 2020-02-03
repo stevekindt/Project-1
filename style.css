@@ -76,34 +76,34 @@ i {
   width: 30%;
 }
 
-
-.uv-span{
+.uv-span {
   color: #fff;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 5px;
 }
-.container{
-  text-align:center;
+.container {
+  text-align: center;
   padding: 50px;
   height: 800px;
 }
-.card-section{
+.card-section {
   width: 20%;
-  padding:20px;
+  padding: 20px;
 }
-#site-name{
-  font-family: 'Quicksand', sans-serif;
-  text-align:center;
-  margin-right:40%;
-  
+#site-name {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  margin-right: 40%;
 }
-#site-name-2{
-  font-family: 'Quicksand', sans-serif;
-  text-align:center;
-  margin-right:30%;
+#site-name-2 {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  margin-right: 30%;
 }
-
-
+#map {
+  height: 50%;
+  width: 100%;
+}
