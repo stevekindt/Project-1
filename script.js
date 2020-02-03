@@ -1,6 +1,5 @@
 var latitude;
 var longitude;
-
 $(document).ready(function() {
   //LANDING PAGE
   //1. BUTTON WITH ONCLICK EVENT; TAKES USER TO SECOND PAGE;
@@ -50,8 +49,8 @@ $(document).ready(function() {
       var tempF = Math.round(response.main.temp);
       var feelsLike = Math.round(response.main.feels_like);
       var windSpeed = Math.round(response.wind.speed);
-      localStorage.latitude = response.coord.lat;
-      localStorage.longitude = response.coord.lon;
+      latitude = parseInt(response.coord.lat);
+      longitude = parseInt(response.coord.lon);
       console.log(tempF);
       console.log(feelsLike);
       console.log(windSpeed);
@@ -170,7 +169,25 @@ $(document).ready(function() {
               dayIndex++;
             }
           }
+          //google map API running function
+          function initMap() {
+            var option = {
+              zoom: 5,
+
+              center: { lat: latitude, lng: longitude }
+            };
+            var map = new google.maps.Map(
+              document.getElementById("map"),
+              option
+            );
+            var marker = new google.maps.Marker({
+              position: { lat: latitude, lng: longitude },
+              map: map
+            });
+          }
+          initMap();
         });
+        ///////////////////////////////the boundry end of the "then function" right after the weaather API calls.
       });
     });
   }
@@ -195,37 +212,24 @@ $(document).ready(function() {
     });
   }
 
-  //3. PLACES: INFO
-});
+  //3. PLACES: (the coding for map displaying)
 
-$("#funFacts").on("click", function() {
-  var country = $("#searchArea").val();
-  countryInfo(country);
-});
-$("#Weatherbtn").on("click", function(event) {
-  event.preventDefault();
-  $("#weather").toggleClass("show");
-  $("#weather").toggleClass("hide");
-  $("#map").toggleClass("hide");
-});
-$("#Places").on("click", function(event) {
-  event.preventDefault();
-  $("#map").toggleClass("hide");
-  $("#map").toggleClass("show");
-  $("#weather").toggleClass("hide");
-});
-//the function that is called by the the Google API, and run function with extra parameter
-var maplatitude = parseInt(localStorage.latitude);
-var maplongitude = parseInt(localStorage.longitude);
-function initMap() {
-  var option = {
-    zoom: 5,
-
-    center: { lat: maplatitude, lng: maplongitude }
-  };
-  var map = new google.maps.Map(document.getElementById("map"), option);
-  var marker = new google.maps.Marker({
-    position: { lat: maplatitude, lng: maplongitude },
-    map: map
+  $("#funFacts").on("click", function() {
+    var country = $("#searchArea").val();
+    countryInfo(country);
   });
-}
+  $("#Weatherbtn").on("click", function(event) {
+    event.preventDefault();
+    $("#weather").toggleClass("show");
+    $("#weather").toggleClass("hide");
+    $("#map").toggleClass("hide");
+  });
+  $("#Places").on("click", function(event) {
+    event.preventDefault();
+    $("#map").toggleClass("hide");
+    $("#map").toggleClass("show");
+    $("#weather").toggleClass("hide");
+  });
+  //the function that is called by the the Google API, and run function with extra parameter
+  initMap();
+});
