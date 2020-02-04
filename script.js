@@ -1,32 +1,32 @@
 $(document).ready(function() {
   //LANDING PAGE
   //1. BUTTON WITH ONCLICK EVENT; TAKES USER TO SECOND PAGE;
+  var city;
   $("#searchButton").on("click", function() {
-    var city;
+    city;
     city = $("#searchArea").val();
     localStorage.chosencity = city;
     location.href = "second-page.html";
-    
   });
 
   //2. SEARCH AREA; CAPTURE USER INPUT; ADD INPUT TO LOCAL STORAGE
 
   //OPERATIONAL PAGE
+  // 0. transfer the input city value from the first page to the second page search area
+  $(".secondSearch").val(localStorage.chosencity);
+  city = $("#searchArea").val();
+  weatherFunction(city);
+  countryInfo(city);
   //1. WEATHER API
 
   $("#enterCity").on("click", function(event) {
     event.preventDefault();
-    var city = $("#searchArea").val();
+    city = $("#searchArea").val();
     weatherFunction(city);
-
-    $("#searchArea").val("");
-
     countryInfo(city);
+  });
 
-
-});
-
-    function weatherFunction(city){
+  function weatherFunction(city) {
     var uvIndex = $("<p>").html("UV Index: ");
     var city = $("#searchArea").val();
     var weatherAPIKey = "&APPID=49b107df79df951ca90870bc8b2042c1";
@@ -57,11 +57,11 @@ $(document).ready(function() {
       var cityName = $("<h1>")
         .addClass("card-title")
         .text(response.name);
-        console.log(response.name)
+      console.log(response.name);
       // var cityDate = $("<h4>").addClass("card-title").text(response.date_iso.toString('en-US'));
       var temperature = $("<h3>")
         .addClass("card-text current-temp")
-        .text( + tempF + " °F");
+        .text(+tempF + " °F");
       var tempFeel = $("<p>")
         .addClass("card-text")
         .text("Feels Like: " + feelsLike + " °F");
@@ -78,7 +78,7 @@ $(document).ready(function() {
 
       // // add to page
       cityName.append(image);
-      cardBody.append(cityName, temperature,tempFeel, humidity, wind, uvIndex);
+      cardBody.append(cityName, temperature, tempFeel, humidity, wind, uvIndex);
       card.append(cardBody);
       $("#weather").append(card);
 
@@ -137,11 +137,9 @@ $(document).ready(function() {
               var temp = results[i].main.temp;
               var tempF = Math.round(temp);
 
-              var card = $("<div>").addClass(
-                "card-section float-left"
-              );
+              var card = $("<div>").addClass("card-section float-left");
               var cardBody = $("<div>").addClass("card-body p-3 forecastBody");
-            //   $(cardBody).css("width: 50px")
+              //   $(cardBody).css("width: 50px")
               var cityDate = $("<h4>")
                 .addClass("card-title")
                 .text(tomorrow.toLocaleDateString("en-US"));
@@ -168,31 +166,34 @@ $(document).ready(function() {
         });
       });
     });
-    }
-    
+  }
 
-    //3. PLACES: INFO
-  
+  //3. PLACES: INFO
 });
 
-function countryInfo(country){
-var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
-var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
-var country = $("#searchArea").val();
-$.ajax({
+function countryInfo(country) {
+  var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
+  var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
+  var country = $("#searchArea").val();
+  $.ajax({
     url: queryURL,
     method: "GET",
     headers: {
-        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-        "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
+      "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+      "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
     }
-}).then(function(response){
+  }).then(function(response) {
     console.log(response);
-});
+
+    var countryName = $("<div>").text(response[0].name);
+    console.log(response[0].name);
+
+    $("#weather").append(countryName);
+  });
 }
 
-$("#Activities").on("click", function() {
-    var country = $("#searchArea").val();
-    countryInfo(country);    
-  });
-
+$("#funFacts").on("click", function() {
+  $("#weather").text("");
+  var country = $("#searchArea").val();
+  countryInfo(country);
+});
