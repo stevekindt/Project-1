@@ -192,6 +192,7 @@ $(document).ready(function() {
     });
   }
   function countryInfo(country) {
+
     var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
     var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
     var country = $("#searchArea").val();
@@ -262,4 +263,6 @@ function countryInfo(country) {
   });
   //the function that is called by the the Google API, and run function with extra parameter
   initMap();
+
+  
 });
