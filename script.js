@@ -27,7 +27,7 @@ $(document).ready(function() {
     event.preventDefault();
     city = $("#searchArea").val();
     weatherFunction(city);
-    countryInfo(city);
+    // countryInfo(city);
     localStorage.setItem("chosenCity") = $(".secondSearch").val();
   });
 
@@ -248,25 +248,34 @@ function countryInfo(country) {
 
   //3. PLACES: (the coding for map displaying)//
 
-  $("#funFacts").on("click", function() {
+  $("#funFacts").on("click", function(event) {
+    event.preventDefault();
+    $('#weather').html("")
+   
     var country = $("#searchArea").val();
+    
+    $("#map").addClass("hide");
+    
     countryInfo(country);
   });
   $("#Weatherbtn").on("click", function(event) {
     event.preventDefault();
-    $("#weather").toggleClass("show");
-    $("#weather").toggleClass("hide");
-    $("#map").toggleClass("hide");
+    $('#map').html('');
+    $('#facts').html('');
+    var country=$("#searchArea").val()
+   
+    weatherFunction(country);
   });
   $("#Places").on("click", function(event) {
     event.preventDefault();
+    $("#weather").html('');
+    $('#facts').html('');
+    var country= $("#searchArea").val()
     $("#map").toggleClass("hide");
-    $("#map").toggleClass("show");
-    $("#weather").toggleClass("hide");
+
   });
   //the function that is called by the the Google API, and run function with extra parameter
-  initMap();
-
-  
+ 
+  initMap(country);
 });
   
