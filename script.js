@@ -10,6 +10,7 @@ $(document).ready(function() {
     city = $("#searchArea").val();
     localStorage.chosencity = city;
     location.href = "second-page.html";
+    // weatherFunction(city);
   });
 
   //2. SEARCH AREA; CAPTURE USER INPUT; ADD INPUT TO LOCAL STORAGE
