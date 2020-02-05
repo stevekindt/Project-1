@@ -66,16 +66,15 @@
     <!--New Nav Bar w/ Weather and Places to stay Buttons-->
 
     <div class="expanded button-group">
-      <button id="Weather" type="button" class="button">Weather</button>
+      <button id="Weatherbtn" type="button" class="button">Weather</button>
       <button id="funFacts" type="button" class="button">Fun Facts</button>
       <button id="Places" type="button" class="button">Map</button>
     </div>
 
     <div class="container">
       <div id="weather" class="show"></div>
-      <div id="Places" class="show"></div>
+      <div id="map" class="hide"></div>
     </div>
-    <br />
 
     <!-- footer -->
     <footer>
@@ -118,6 +117,13 @@
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
       integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
       crossorigin="anonymous"
+    ></script>
+    <!--google API call with required key. It also calls the function that is called "initMap" is is in the js-->
+    <!--I tried to put these script into js but it wont run correctly, so I decided to put it here-->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChS377ioc4rERCH7UXk3AwP-PahaIe66o&callback"
     ></script>
   </body>
 </html>
