@@ -170,7 +170,7 @@ $(document).ready(function() {
             }
           }
           //google map API running function
-          function initMap(country) {
+          function initMap() {
             var option = {
               zoom: 5,
 
