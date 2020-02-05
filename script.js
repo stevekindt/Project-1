@@ -212,7 +212,7 @@ $(document).ready(function() {
     });
   }
 
-  //3. PLACES: (the coding for map displaying)
+  //3. PLACES: (the coding for map displaying)//
 
   $("#funFacts").on("click", function() {
     var country = $("#searchArea").val();
