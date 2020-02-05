@@ -106,4 +106,12 @@ i {
   margin-right:30%;
 }
 
+.show-image{
+ background:url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg) no-repeat center center fixed;
+ -webkit-animation: fadein 4s; /* Safari and Chrome */
+ -moz-animation: fadein 4s; /* Firefox */
+ -ms-animation: fadein 4s; /* Internet Explorer */
+ -o-animation: fadein 4s; /* Opera */
+ animation: fadein 4s;
+}
 
