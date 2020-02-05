@@ -1,7 +1,10 @@
+var latitude;
+var longitude;
 $(document).ready(function() {
   //LANDING PAGE
   //1. BUTTON WITH ONCLICK EVENT; TAKES USER TO SECOND PAGE;
   var city;
+
   $("#searchButton").on("click", function() {
     city;
     city = $("#searchArea").val();
@@ -24,6 +27,7 @@ $(document).ready(function() {
     city = $("#searchArea").val();
     weatherFunction(city);
     countryInfo(city);
+    localStorage.chosencity = $(".secondSearch").val();
   });
 
   function weatherFunction(city) {
@@ -45,6 +49,8 @@ $(document).ready(function() {
       var tempF = Math.round(response.main.temp);
       var feelsLike = Math.round(response.main.feels_like);
       var windSpeed = Math.round(response.wind.speed);
+      latitude = parseInt(response.coord.lat);
+      longitude = parseInt(response.coord.lon);
       console.log(tempF);
       console.log(feelsLike);
       console.log(windSpeed);
@@ -163,37 +169,67 @@ $(document).ready(function() {
               dayIndex++;
             }
           }
+          //google map API running function
+          function initMap() {
+            var option = {
+              zoom: 5,
+
+              center: { lat: latitude, lng: longitude }
+            };
+            var map = new google.maps.Map(
+              document.getElementById("map"),
+              option
+            );
+            var marker = new google.maps.Marker({
+              position: { lat: latitude, lng: longitude },
+              map: map
+            });
+          }
+          initMap();
         });
+        ///////////////////////////////the boundry end of the "then function" right after the weaather API calls.
       });
     });
   }
+  function countryInfo(country) {
+    var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
+    var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
+    var country = $("#searchArea").val();
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+        "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
+      }
+    }).then(function(response) {
+      console.log(response);
 
-  //3. PLACES: INFO
-});
+      var countryName = $("<div>").text(response[0].name);
+      console.log(response[0].name);
 
-function countryInfo(country) {
-  var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
-  var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
-  var country = $("#searchArea").val();
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-      "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
-    }
-  }).then(function(response) {
-    console.log(response);
+      $("#weather").append(countryName);
+    });
+  }
 
-    var countryName = $("<div>").text(response[0].name);
-    console.log(response[0].name);
+  //3. PLACES: (the coding for map displaying)
 
-    $("#weather").append(countryName);
+  $("#funFacts").on("click", function() {
+    var country = $("#searchArea").val();
+    countryInfo(country);
   });
-}
-
-$("#funFacts").on("click", function() {
-  $("#weather").text("");
-  var country = $("#searchArea").val();
-  countryInfo(country);
+  $("#Weatherbtn").on("click", function(event) {
+    event.preventDefault();
+    $("#weather").toggleClass("show");
+    $("#weather").toggleClass("hide");
+    $("#map").toggleClass("hide");
+  });
+  $("#Places").on("click", function(event) {
+    event.preventDefault();
+    $("#map").toggleClass("hide");
+    $("#map").toggleClass("show");
+    $("#weather").toggleClass("hide");
+  });
+  //the function that is called by the the Google API, and run function with extra parameter
+  initMap();
 });
