@@ -18,8 +18,9 @@ $(document).ready(function() {
   // 0. transfer the input city value from the first page to the second page search area
   $(".secondSearch").val(localStorage.chosencity);
   city = $("#searchArea").val();
-  weatherFunction(city);
+  weatherFunction(localStorage.chosencity);
   countryInfo(city);
+
   //1. WEATHER API
 
   $("#enterCity").on("click", function(event) {
@@ -27,12 +28,13 @@ $(document).ready(function() {
     city = $("#searchArea").val();
     weatherFunction(city);
     countryInfo(city);
-    localStorage.chosencity = $(".secondSearch").val();
+    localStorage.setItem("chosenCity") = $(".secondSearch").val();
   });
 
   function weatherFunction(city) {
     var uvIndex = $("<p>").html("UV Index: ");
-    var city = $("#searchArea").val();
+    // var city = $("#searchArea").val();
+    console.log(city)
     var weatherAPIKey = "&APPID=49b107df79df951ca90870bc8b2042c1";
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -209,7 +211,8 @@ $(document).ready(function() {
       var countryName = $("<div>").text(response[0].name);
       console.log(response[0].name);
 
-
+    });
+  }
 function countryInfo(country) {
   var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
   var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
@@ -229,8 +232,8 @@ function countryInfo(country) {
     var region = $("<div>").text(response[0].region);
     var demonym = $("<div>").text(response[0].demonym);
     var giniIndex = $("<div>").text(response[0].gini);
-    var capitalCity = $(“<div>“).text(“Capital city is: ” + response[0].capital);
-    var population = $(“<div>“).text(“Population: ” + response[0].population); //add commas to numerical response
+    var capitalCity = $("<div>").text("Capital city is: " + response[0].capital);
+    var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
 
     $("#weather").append(countryName);
     $("#weather").append(capitalCity);
@@ -266,3 +269,4 @@ function countryInfo(country) {
 
   
 });
+  
