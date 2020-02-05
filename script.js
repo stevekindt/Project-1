@@ -187,8 +187,15 @@ function countryInfo(country) {
 
     var countryName = $("<div>").text(response[0].name);
     console.log(response[0].name);
+    var region = $("<div>").text(response[0].region);
+    var demonym = $("<div>").text(response[0].demonym);
+    var giniIndex = $("<div>").text(response[0].gini);
+
 
     $("#weather").append(countryName);
+    $("#weather").append(region);
+    $("#weather").append(demonym);
+    $("#weather").append(gini);
   });
 }
 
