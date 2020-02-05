@@ -19,7 +19,7 @@ $(document).ready(function() {
   $("#searchArea").val(localStorage.chosencity);
   city = $("#searchArea").val();
   weatherFunction(localStorage.chosencity);
-  countryInfo(city);
+  // countryInfo(city);
 
   //1. WEATHER API
 
@@ -261,6 +261,7 @@ $(document).ready(function() {
     $('#map').html('');
     $('#facts').html('');
     var country=$("#searchArea").val()
+    $("#map").addClass('hide');
    
     weatherFunction(country);
   });
