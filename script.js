@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   //OPERATIONAL PAGE
   // 0. transfer the input city value from the first page to the second page search area
-  $(".secondSearch").val(localStorage.chosencity);
+  $("#searchArea").val(localStorage.chosencity);
   city = $("#searchArea").val();
   weatherFunction(localStorage.chosencity);
   countryInfo(city);
@@ -34,7 +34,7 @@ $(document).ready(function() {
   function weatherFunction(city) {
     var uvIndex = $("<p>").html("UV Index: ");
     // var city = $("#searchArea").val();
-    console.log(city)
+    console.log(city);
     var weatherAPIKey = "&APPID=49b107df79df951ca90870bc8b2042c1";
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -194,7 +194,6 @@ $(document).ready(function() {
     });
   }
   function countryInfo(country) {
-
     var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
     var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
     var country = $("#searchArea").val();
@@ -210,41 +209,40 @@ $(document).ready(function() {
 
       var countryName = $("<div>").text(response[0].name);
       console.log(response[0].name);
-
     });
   }
-function countryInfo(country) {
-  var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
-  var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
-  var country = $("#searchArea").val();
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-      "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
-    }
-  }).then(function(response) {
-    console.log(response);
+  function countryInfo(country) {
+    var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
+    var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
+    var country = $("#searchArea").val();
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+        "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
+      }
+    }).then(function(response) {
+      console.log(response);
 
-    var countryName = $("<div>").text(response[0].name);
-    console.log(response[0].name);
-    var region = $("<div>").text(response[0].region);
-    var demonym = $("<div>").text(response[0].demonym);
-    var giniIndex = $("<div>").text(response[0].gini);
-    var capitalCity = $("<div>").text("Capital city is: " + response[0].capital);
-    var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
+      var countryName = $("<div>").text(response[0].name);
+      console.log(response[0].name);
+      var region = $("<div>").text(response[0].region);
+      var demonym = $("<div>").text(response[0].demonym);
+      var giniIndex = $("<div>").text(response[0].gini);
+      var capitalCity = $("<div>").text(
+        "Capital city is: " + response[0].capital
+      );
+      var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
 
-    $("#weather").append(countryName);
-    $("#weather").append(capitalCity);
-    $("#weather").append(population);
-    $("#weather").append(region);
-    $("#weather").append(demonym);
-    $("#weather").append(giniIndex);
-
-  });
-}
-
+      $("#weather").append(countryName);
+      $("#weather").append(capitalCity);
+      $("#weather").append(population);
+      $("#weather").append(region);
+      $("#weather").append(demonym);
+      $("#weather").append(giniIndex);
+    });
+  }
 
   //3. PLACES: (the coding for map displaying)//
 
@@ -275,7 +273,10 @@ function countryInfo(country) {
 
   });
   //the function that is called by the the Google API, and run function with extra parameter
+<<<<<<< HEAD
  
   initMap(country);
+=======
+  initMap();
+>>>>>>> 07861054cea85d6e251fb41492241080ca6b6b65
 });
-  
