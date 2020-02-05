@@ -273,10 +273,6 @@ $(document).ready(function() {
 
   });
   //the function that is called by the the Google API, and run function with extra parameter
-<<<<<<< HEAD
  
   initMap(country);
-=======
-  initMap();
->>>>>>> 07861054cea85d6e251fb41492241080ca6b6b65
 });
