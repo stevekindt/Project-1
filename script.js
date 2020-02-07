@@ -225,16 +225,17 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      var countryName = $("<div>").text(response[0].name);
+      var countryName = $("<h5>").text(response[0].name);
       console.log(response[0].name);
-      var region = $("<div>").text(response[0].region);
-      var demonym = $("<div>").text(response[0].demonym);
-      var giniIndex = $("<div>").text(response[0].gini);
+      var region = $("<div>").text("World region: " + response[0].region);
+      var demonym = $("<div>").text("Locals are referred to as: " + response[0].demonym);
+      var giniIndex = $("<div>").text("Gini ratio for wealth distribution: " + response[0].gini);
       var capitalCity = $("<div>").text(
         "Capital city is: " + response[0].capital
       );
       var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
 
+      $("#weather").addClass("callout primary");
       $("#weather").append(countryName);
       $("#weather").append(capitalCity);
       $("#weather").append(population);
