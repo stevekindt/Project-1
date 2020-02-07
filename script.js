@@ -28,6 +28,7 @@ $(document).ready(function() {
     city = $("#searchArea").val();
     weatherFunction(city);
     $('#facts').addClass('hide');
+    $('#map').addClass('hide');
     // countryInfo(city);
     localStorage.setItem("chosenCity") = $(".secondSearch").val();
   });
