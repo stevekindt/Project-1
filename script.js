@@ -27,6 +27,7 @@ $(document).ready(function() {
     event.preventDefault();
     city = $("#searchArea").val();
     weatherFunction(city);
+    $('#facts').addClass('hide');
     // countryInfo(city);
     localStorage.setItem("chosenCity") = $(".secondSearch").val();
   });
@@ -193,6 +194,7 @@ $(document).ready(function() {
       });
     });
   }
+
   function countryInfo(country) {
     var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
     var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
@@ -207,29 +209,11 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      var countryName = $("<div>").text(response[0].name);
+      var countryName = $("<h5>").text(response[0].name);
       console.log(response[0].name);
-    });
-  }
-  function countryInfo(country) {
-    var queryURL = "https://restcountries-v1.p.rapidapi.com/name/" + country;
-    var APIKey = "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2";
-    var country = $("#searchArea").val();
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-        "x-rapidapi-key": "f0d4f8d702msh69fb856e668227cp1367a9jsn3c48cea2fbc2"
-      }
-    }).then(function(response) {
-      console.log(response);
-
-      var countryName = $("<div>").text(response[0].name);
-      console.log(response[0].name);
-      var region = $("<div>").text(response[0].region);
-      var demonym = $("<div>").text(response[0].demonym);
-      var giniIndex = $("<div>").text(response[0].gini);
+      var region = $("<div>").text("World region: " + response[0].region);
+      var demonym = $("<div>").text("Locals are known as: " + response[0].demonym);
+      var giniIndex = $("<div>").text("Gini ratio for wealth distribution: " + response[0].gini);
       var capitalCity = $("<div>").text(
         "Capital city is: " + response[0].capital
       );
