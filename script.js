@@ -225,23 +225,22 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      var countryName = $("<h5>").text(response[0].name);
+      var countryName = $("<div>").text(response[0].name);
       console.log(response[0].name);
-      var region = $("<div>").text("World region: " + response[0].region);
-      var demonym = $("<div>").text("Locals are referred to as: " + response[0].demonym);
-      var giniIndex = $("<div>").text("Gini ratio for wealth distribution: " + response[0].gini);
+      var region = $("<div>").text(response[0].region);
+      var demonym = $("<div>").text(response[0].demonym);
+      var giniIndex = $("<div>").text(response[0].gini);
       var capitalCity = $("<div>").text(
         "Capital city is: " + response[0].capital
       );
       var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
 
-      $("#weather").addClass("callout primary");
-      $("#weather").append(countryName);
-      $("#weather").append(capitalCity);
-      $("#weather").append(population);
-      $("#weather").append(region);
-      $("#weather").append(demonym);
-      $("#weather").append(giniIndex);
+      $("#facts").append(countryName);
+      $("#facts").append(capitalCity);
+      $("#facts").append(population);
+      $("#facts").append(region);
+      $("#facts").append(demonym);
+      $("#facts").append(giniIndex);
     });
   }
 
@@ -250,8 +249,9 @@ $(document).ready(function() {
   $("#funFacts").on("click", function(event) {
     event.preventDefault();
     $('#weather').html("")
-   
+    $('#facts').removeClass("hide").addClass('callout primary');
     var country = $("#searchArea").val();
+    $('#facts').html('');
     
     $("#map").addClass("hide");
     
@@ -260,7 +260,7 @@ $(document).ready(function() {
   $("#Weatherbtn").on("click", function(event) {
     event.preventDefault();
     $('#map').html('');
-    $('#facts').html('');
+    $('#facts').addClass('hide');
     var country=$("#searchArea").val()
     $("#map").addClass('hide');
    
@@ -270,7 +270,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("#weather").html('');
     $('#facts').html('');
-    var country= $("#searchArea").val()
+    $('#facts').addClass('hide');
     $("#map").toggleClass("hide");
 
   });
