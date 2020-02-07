@@ -1,4 +1,17 @@
 # Project-1
-First Group Project
 
-This is the first group project we've done in class. Objectives include using a new CSS framework, using at least 2 APIs (one of which has to be new), and more. We'll edit this readme later once we put our project outline together. On Jan 25th we did initial wireframing.
+Our application is called TravelMaster and its target user would be someone who is looking for travel inspiration. At the home page the user is presented with a search bar into which a potential destination can be entered. Upon searching, the user is redirected to a page outlining the current and forecasted weather for this destination. The user also has options to view fun facts about the country in the search, or to view the location on a map.
+
+The application utilizes Foundation as a CSS framework and is navigable and searchable via user input or clicks. The application makes use of third party APIs including OpenWeatherMap, REST Countries v1, and Google Maps.
+
+Originally, the application sought to use another API called Amadeus that would have provided different destination information. The API would not have required a country name search parameter, so our intended outcome at the beginning of the project was to use a city search parameter to return information such as hotels to stay at, places of interest in the area, and local restaurants. However, this API required authentication steps including an API key, and it eventually became evident that further pursuit toward using this specific API was putting us behind and we did not need this specific API to accomplish the minimum viable product.
+
+We initially divided design responsibility between writing the html for the main page, weather page, and “operational” page including destination-specific information. We then incorporated Foundation CSS framework for styling. From there, Germain worked on the footer design and page layout; Tommy and Kelly focused on weather readout script; and Lauren, Jack, and Steve worked on the “operational” page via another API. When it became clear that it was in our interest to find another API, Jack transitioned to incorporating the Google Maps API while Lauren and Steve worked on understanding what REST Countries v1 offered for functionality. By this time, all group members worked on page-to-page navigation functionality, additional styling touches, and writing/editing script for the main container contents of weather, fun facts, and maps.
+
+One of our main challenges was the aforementioned determination that it wasn’t in our best interest to use our intended API and maintain progress toward our MVP within the project timeline. Another major challenge was making Git commits on such a large, shared scale. Working collaboratively was not an issue in practice, but the Git aspect - managing commits and pull requests, resolving conflicts, etc.  - was probably our biggest obstacle here in our first group project.
+
+In the future we may revisit incorporating an API that requires the API Secret. The Amadeus API that we’d originally identified made for a more realistic user story. The switch to REST Countries v1 required a modification to the user story that is a bit limited or forced. This could be looked at as representing Agile methodology in that we had to embrace a change to requirements. We also demonstrated Agile methods throughout this project by making frequent contact both inside and outside of class, delivering different iterations of a workable application, and regular reflection on how to be more effective or how to best use our time before or during the next class. There are, however, aspects of Agile methodology that we could work on for the future. For example, even when working in the same room we would sometimes be working on the same sections of code.
+
+Link to GitHub repository: https://github.com/stevekindt/Project-1
+
+Link to deployed application: https://stevekindt.github.io/Project-1/
