@@ -108,10 +108,23 @@ i {
 
 .show-image{
  background:url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg) no-repeat center center fixed;
-
+ animation: fadeInAnimation ease 3s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        } 
+        @keyframes fadeInAnimation { 
+            0% { 
+                opacity: 0; 
+            } 
+            100% { 
+                opacity: 1; 
+            } 
 }
 
 #map {
   height: 50%;
   width: 100%;
+}
+.filler{
+  height:125px;
 }
