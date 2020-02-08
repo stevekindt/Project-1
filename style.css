@@ -76,55 +76,54 @@ i {
   width: 30%;
 }
 
-
-.uv-span{
+.uv-span {
   color: #fff;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 5px;
 }
-.container{
-  text-align:center;
+.container {
+  text-align: center;
   padding: 50px;
   height: 800px;
 }
-.card-section{
+.card-section {
   width: 20%;
-  padding:20px;
+  padding: 20px;
 }
-#site-name{
-  font-family: 'Quicksand', sans-serif;
-  text-align:center;
-  margin-right:40%;
-  
+#site-name {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  margin-right: 40%;
 }
-#site-name-2{
-  font-family: 'Quicksand', sans-serif;
-  text-align:center;
-  margin-right:30%;
+#site-name-2 {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  margin-right: 30%;
 }
 
-.show-image{
- background:url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg) no-repeat center center fixed;
- animation: fadeInAnimation ease 3s; 
-            animation-iteration-count: 1; 
-            animation-fill-mode: forwards; 
-        } 
-        @keyframes fadeInAnimation { 
-            0% { 
-                opacity: 0; 
-            } 
-            100% { 
-                opacity: 1; 
-            } 
+.show-image {
+  background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg)
+    no-repeat center center fixed;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #map {
   height: 50%;
   width: 100%;
 }
-.filler{
-  height:125px;
+.filler {
+  height: 125px;
 }

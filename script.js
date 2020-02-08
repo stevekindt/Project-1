@@ -27,8 +27,8 @@ $(document).ready(function() {
     event.preventDefault();
     city = $("#searchArea").val();
     weatherFunction(city);
-    $('#facts').addClass('hide');
-    $('#map').addClass('hide');
+    $("#facts").addClass("hide");
+    $("#map").addClass("hide");
     // countryInfo(city);
     localStorage.setItem("chosenCity") = $(".secondSearch").val();
   });
@@ -65,21 +65,21 @@ $(document).ready(function() {
       var card = $("<div>").addClass("card");
       var cardBody = $("<div>").addClass("card-body");
       var cityName = $("<h1>")
-        .addClass("card-title")
+        .addClass("card-title translating")
         .text(response.name);
       console.log(response.name);
       // var cityDate = $("<h4>").addClass("card-title").text(response.date_iso.toString('en-US'));
       var temperature = $("<h3>")
-        .addClass("card-text current-temp")
+        .addClass("card-text current-temp translating")
         .text(+tempF + " °F");
       var tempFeel = $("<p>")
-        .addClass("card-text")
+        .addClass("card-text translating")
         .text("Feels Like: " + feelsLike + " °F");
       var humidity = $("<p>")
-        .addClass("card-text current-humidity")
+        .addClass("card-text current-humidity translating")
         .text("Humidity: " + response.main.humidity + "%");
       var wind = $("<p>")
-        .addClass("card-text current-wind")
+        .addClass("card-text current-wind translating")
         .text("Wind Speed: " + windSpeed + " MPH");
       var image = $("<img>").attr(
         "src",
@@ -154,10 +154,10 @@ $(document).ready(function() {
                 .addClass("card-title")
                 .text(tomorrow.toLocaleDateString("en-US"));
               var temperature = $("<p>")
-                .addClass("card-text forecastTemp")
+                .addClass("card-text forecastTemp translating")
                 .text("Temperature: " + tempF + "° F");
               var humidity = $("<p>")
-                .addClass("card-text forecastHumidity")
+                .addClass("card-text forecastHumidity translating")
                 .text("Humidity: " + results[i].main.humidity + "%");
 
               var image = $("<img>").attr(
@@ -210,15 +210,25 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      var countryName = $("<h5>").text(response[0].name);
+      var countryName = $("<h5>")
+        .addClass("translating")
+        .text(response[0].name);
       console.log(response[0].name);
-      var region = $("<div>").text("World region: " + response[0].region);
-      var demonym = $("<div>").text("Locals are known as: " + response[0].demonym);
-      var giniIndex = $("<div>").text("Gini ratio for wealth distribution: " + response[0].gini);
-      var capitalCity = $("<div>").text(
-        "Capital city is: " + response[0].capital
-      );
-      var population = $("<div>").text("Population: " + response[0].population); //add commas to numerical response
+      var region = $("<div>")
+        .addClass("translating")
+        .text("World region: " + response[0].region);
+      var demonym = $("<div>")
+        .addClass("translating")
+        .text("Locals are known as: " + response[0].demonym);
+      var giniIndex = $("<div>")
+        .addClass("translating")
+        .text("Gini ratio for wealth distribution: " + response[0].gini);
+      var capitalCity = $("<div>")
+        .addClass("translating")
+        .text("Capital city is: " + response[0].capital);
+      var population = $("<div>")
+        .addClass("translating")
+        .text("Population: " + response[0].population); //add commas to numerical response
 
       $("#facts").append(countryName);
       $("#facts").append(capitalCity);
@@ -229,37 +239,123 @@ $(document).ready(function() {
     });
   }
 
+  addTranslateButton();
+  addTranslateFr();
+
+  function addTranslateButton() {
+    var transBtn = $("#translateBtn");
+
+    transBtn.click(function() {
+      // MAKE TRANSLATE CALL
+      console.log("translating");
+
+      //find the weather text on the page using Jquery
+      var transText = $(".translating");
+      //var myText;
+
+      for (var i = 0; i < transText.length; i++) {
+        var myText = transText[i];
+        replaceTranslation(myText);
+        function replaceTranslation(txt) {
+          var url =
+            "https://translate.yandex.net/api/v1.5/tr.json/translate?" +
+            "key=" +
+            "trnsl.1.1.20200205T011214Z.874b3a09797c61b6.fa9febc0550b040bc870b0a7ecf16b636e7c26d9" +
+            "&text=" +
+            txt.innerText +
+            "&lang=es";
+
+          $.ajax({
+            url: url,
+            method: "POST"
+          }).done(function(response) {
+            console.log(response);
+
+            //Get text out of response
+            var translateText = response.text[0];
+            console.log(translateText);
+            //Put text #weather
+
+            $(txt).text(translateText);
+          });
+        }
+      }
+    });
+  }
+
+  function addTranslateFr() {
+    var transBtn = $("#translateFr");
+
+    transBtn.click(function() {
+      // MAKE TRANSLATE CALL
+      console.log("translating");
+
+      //find the weather text on the page using Jquery
+      var transText = $(".translating");
+      //var myText;
+
+      for (var i = 0; i < transText.length; i++) {
+        var myText = transText[i];
+        replaceTranslation(myText);
+        function replaceTranslation(txt) {
+          var url =
+            "https://translate.yandex.net/api/v1.5/tr.json/translate?" +
+            "key=" +
+            "trnsl.1.1.20200205T011214Z.874b3a09797c61b6.fa9febc0550b040bc870b0a7ecf16b636e7c26d9" +
+            "&text=" +
+            txt.innerText +
+            "&lang=fr";
+
+          $.ajax({
+            url: url,
+            method: "POST"
+          }).done(function(response) {
+            console.log(response);
+
+            //Get text out of response
+            var translateText = response.text[0];
+            console.log(translateText);
+            //Put text #weather
+
+            $(txt).text(translateText);
+          });
+        }
+      }
+    });
+  }
+
   //3. PLACES: (the coding for map displaying)//
 
   $("#funFacts").on("click", function(event) {
     event.preventDefault();
-    $('#weather').html("")
-    $('#facts').removeClass("hide").addClass('callout primary');
+    $("#weather").html("");
+    $("#facts")
+      .removeClass("hide")
+      .addClass("callout primary");
     var country = $("#searchArea").val();
-    $('#facts').html('');
-    
+    $("#facts").html("");
+
     $("#map").addClass("hide");
-    
+
     countryInfo(country);
   });
   $("#Weatherbtn").on("click", function(event) {
     event.preventDefault();
-    $('#map').html('');
-    $('#facts').addClass('hide');
-    var country=$("#searchArea").val()
-    $("#map").addClass('hide');
-   
+    $("#map").html("");
+    $("#facts").addClass("hide");
+    var country = $("#searchArea").val();
+    $("#map").addClass("hide");
+
     weatherFunction(country);
   });
   $("#Places").on("click", function(event) {
     event.preventDefault();
-    $("#weather").html('');
-    $('#facts').html('');
-    $('#facts').addClass('hide');
+    $("#weather").html("");
+    $("#facts").html("");
+    $("#facts").addClass("hide");
     $("#map").toggleClass("hide");
-
   });
   //the function that is called by the the Google API, and run function with extra parameter
- 
+
   initMap(country);
 });
